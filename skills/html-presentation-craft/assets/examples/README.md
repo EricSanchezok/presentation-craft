@@ -1,26 +1,14 @@
-# 可运行的场景示例
+# 实现示例索引
 
-这是随 skill 分发的原始源码。每个 `deck.tsx` 会被复制到新项目的 `src/`，使用 starter 的 `runtime/`；不要直接在本目录运行这些 TSX 文件。[catalog.json](catalog.json) 是示例身份、标题与预览状态的唯一目录。
+按当前需要的技法选择源码。先在新内容中确定对象、关系、固定参照和变化变量，再复用对应实现；方法选择见 [表达选择与迁移](../../references/visual-decisions.md)。
 
-| 示例 | 源码 | 学习重点 |
+| 实现需求 | 源码 | 可检查的部分 |
 |---|---|---|
-| ANC 耳机 | [anc/deck.tsx](anc/deck.tsx) | 实物外观、剖面、声压叠加、理想与实际边界 |
-| 相机自动对焦 | [autofocus/deck.tsx](autofocus/deck.tsx) | 光路、镜片、焦点、模糊滤镜的同步状态 |
-| 业务决策 | [decision/deck.tsx](decision/deck.tsx) | 对象流程与同尺度图表、试点与指标 |
-| 二分教学 | [teaching/deck.tsx](teaching/deck.tsx) | 候选卡片、区间、分支与静态完整过程 |
+| 外观、局部放大与信号叠加 | [anc/deck.tsx](anc/deck.tsx) | 场景尺度切换、部件分工、相关曲线的同步状态 |
+| 几何、路径与滤镜联动 | [autofocus/deck.tsx](autofocus/deck.tsx) | 固定参照、几何约束、位置与图像的同步变化 |
+| 过程语义与数据比较 | [decision/deck.tsx](decision/deck.tsx) | 对象图与同尺度图表的分工、比较依据与后续行动 |
+| 候选范围与分步推导 | [teaching/deck.tsx](teaching/deck.tsx) | 对象、区间、判定记录与完整静态过程 |
 
-在 skill 根目录运行：
+需要运行某项示例时，使用 [catalog.json](catalog.json) 中的 id 调用 `create-deck.mjs <新目录> --example <id>`。脚本将对应 deck.tsx 放入新项目的 src，与 starter 的 runtime 配合使用；不要直接在本目录执行 TSX 文件。完整创建流程见 [HTML 实现](../../references/runtime.md)。
 
-```sh
-node scripts/create-deck.mjs /absolute/new-demo --example anc
-cd /absolute/new-demo
-npm ci
-npm run dev
-npm run build
-```
-
-把 `anc` 换成目录中的其他 id 即可。创建目标必须不存在。没有 `--example` 时使用中性的申请流程示例。四套源码包含各自讲稿、步骤与来源，复制安装 skill 后不需要另一个仓库。
-
-## 如何借鉴
-
-先阅读 [视觉设计案例](../../references/visual-decisions.md)，再看对应源码。耳机与相机的主题部件属于场景，不必加入通用图标库。保留数据定义和完整状态的契约，为新内容重新构图；不要仅替换名词就把声学剖面用于其他机制。
+可以复用局部组件或状态技法，无需复制整套示例。具体对象、主题、视觉方向和页数由新任务决定；索引没有覆盖的表达形式按内容自行设计。

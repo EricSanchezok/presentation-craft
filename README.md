@@ -97,7 +97,7 @@ tests/                           行为、素材与浏览器验证
 docs/                            架构、开发、决策、来源与验证记录
 ```
 
-[开发指南](docs/development.md) 提供完整命令；[架构](docs/architecture.md) 说明职责；[视觉案例](skills/html-presentation-craft/references/visual-decisions.md) 解释具体取舍；[贡献指南](CONTRIBUTING.md) 说明修改与提交流程。新增示例以 skill 内的 catalog 为准，不维护平行源码副本。repo-seed 驻库治理不会复制到每个演示项目。
+[开发指南](docs/development.md) 提供完整命令；[架构](docs/architecture.md) 说明职责；[表达选择指南](skills/html-presentation-craft/references/visual-decisions.md) 帮助按信息关系推导设计；[贡献指南](CONTRIBUTING.md) 说明修改与提交流程。新增示例以 skill 内的 catalog 为准，不维护平行源码副本。repo-seed 驻库治理不会复制到每个演示项目。
 
 ## 许可
 
