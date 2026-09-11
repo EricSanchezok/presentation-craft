@@ -1,0 +1,4 @@
+interface:
+  display_name: "HTML Presentation Craft"
+  short_description: "HTML talks with narrative, diagrams, motion and offline delivery"
+  default_prompt: "Use $html-presentation-craft to turn these materials into a clear HTML presentation."

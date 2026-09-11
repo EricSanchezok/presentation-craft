@@ -1,0 +1,24 @@
+{
+  "name": "presentation-craft",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "npm --prefix skills/html-presentation-craft/assets/starter run check",
+    "build": "npm --prefix skills/html-presentation-craft/assets/starter run build",
+    "examples": "node scripts/build-examples.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "gates": "node scripts/run-gates.mjs",
+    "check:skill": "node scripts/check-skill.mjs",
+    "package": "python3 scripts/package.py",
+    "preview": "node scripts/serve.mjs",
+    "test:assets": "node tests/assets.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

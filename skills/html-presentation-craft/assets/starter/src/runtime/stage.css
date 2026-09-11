@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  width: 100%;
+}
+body {
+  background: #e5e7eb;
+  color: #203042;
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #0079b7;
+  outline-offset: 4px;
+}
+button {
+  border: 1px solid #c3cbd3;
+  background: #fff;
+  color: #233241;
+  border-radius: 6px;
+  padding: 8px 11px;
+}
+button:hover {
+  background: #edf2f6;
+}
+.presentation {
+  --paper: #f6f9fc;
+  --ink: #213c55;
+  --muted: #576f83;
+  --accent: #146d9b;
+  --secondary: #459084;
+  --surface: #fff;
+  --line: #bdd1df;
+  --font-display: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  color: var(--ink);
+}
+.live-stage {
+  width: min(calc(100vw - 32px), calc((100dvh - 90px) *16/9));
+  aspect-ratio: 16/9;
+  container-type: inline-size;
+}
+.stage {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: var(--paper);
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--ink);
+}
+.stage header {
+  position: absolute;
+  top: 5%;
+  left: 6.3%;
+  right: 6.3%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.03cqw;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.heading {
+  position: absolute;
+  left: 6.3%;
+  right: 6.3%;
+  top: 14%;
+}
+.heading h1 {
+  font-family: var(--font-display);
+  font-size: 3.4cqw;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+.heading p {
+  font-size: 1.35cqw;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 1cqw 0 0;
+}
+.scene {
+  position: absolute;
+  left: 6.3%;
+  right: 6.3%;
+  top: 34%;
+  height: 45.7%;
+}
+.scene > div,
+.scene svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.diagram-label {
+  font-size: 24px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+.diagram-caption {
+  font-size: 18px;
+  fill: var(--muted);
+}
+svg text {
+  font-family: inherit;
+}
+.takeaway {
+  position: absolute;
+  left: 6.3%;
+  right: 6.3%;
+  bottom: 10%;
+  margin: 0;
+  padding-top: 1cqw;
+  border-top: 1px solid var(--line);
+  font-size: 1.55cqw;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.stage footer {
+  position: absolute;
+  bottom: 4%;
+  left: 6.3%;
+  right: 6.3%;
+  font-size: 0.93cqw;
+  color: var(--muted);
+}
+a {
+  color: inherit;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+.progress {
+  min-width: 100px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.focus-mode {
+  padding: 0;
+}
+.focus-mode .live-stage {
+  width: min(100vw, calc(100dvh*16/9));
+}
+.focus-mode .controls {
+  display: none;
+}
+.restore {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  font-size: 12px;
+  opacity: 0.16;
+}
+.restore:hover,
+.restore:focus-visible {
+  opacity: 1;
+}
+.print-deck {
+  display: none;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+dialog {
+  width: min(780px, 90vw);
+  max-height: 85dvh;
+  overflow: auto;
+  padding: 26px;
+  border: 1px solid #bec8d1;
+  border-radius: 10px;
+  color: #203042;
+  background: #fff;
+}
+dialog::backdrop {
+  background: #14223288;
+}
+.dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.dialog-heading h2 {
+  margin: 0;
+  font-size: 22px;
+}
+.dialog-heading button {
+  flex-shrink: 0;
+}
+.notes {
+  white-space: pre-wrap;
+  line-height: 1.85;
+  font-size: 18px;
+}
+.muted {
+  color: #586879;
+}
+.overview {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+.overview button {
+  text-align: left;
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+}
+.overview span {
+  color: #586879;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 800px) {
+  .presentation {
+    padding: 8px;
+    gap: 8px;
+  }
+  .live-stage {
+    width: min(calc(100vw - 16px), calc((100dvh - 130px) *16/9));
+  }
+  .controls {
+    max-width: 95vw;
+    font-size: 11px;
+  }
+  .controls button {
+    padding: 5px 7px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+@page {
+  size: 13.333in 7.5in;
+  margin: 0;
+}
+@media print {
+  html,
+  body,
+  #root {
+    width: 1280px;
+    height: auto;
+    background: white;
+  }
+  .presentation {
+    display: block;
+    padding: 0;
+  }
+  .live-stage,
+  .controls,
+  .restore,
+  dialog {
+    display: none !important;
+  }
+  .print-deck {
+    display: block;
+  }
+  .print-stage {
+    width: 1280px;
+    height: 720px;
+    container-type: inline-size;
+    break-after: page;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  .print-stage:last-child {
+    break-after: auto;
+  }
+}
+
+/* Large mechanism scenes keep the same stage grid and reading order. */
+.layout-visual .heading {
+  top: 12%;
+}
+.layout-visual .heading h1 {
+  font-size: 3.1cqw;
+}
+.layout-visual .scene {
+  top: 29%;
+  height: 51%;
+}
+.layout-visual .takeaway {
+  bottom: 9%;
+}

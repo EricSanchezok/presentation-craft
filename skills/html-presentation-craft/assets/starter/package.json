@@ -1,0 +1,36 @@
+{
+  "name": "html-presentation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "check": "tsc --noEmit && oxlint src",
+    "build": "npm run check && tsx scripts/export-notes.ts && vite build && node scripts/bundle.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "format": "oxfmt src scripts vite.config.ts"
+  },
+  "dependencies": {
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "gsap": "3.15.0"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@types/node": "22.19.19",
+    "typescript": "5.9.3",
+    "vite": "8.0.13",
+    "oxlint": "1.76.0",
+    "parse5": "7.3.0",
+    "postcss": "8.5.6",
+    "postcss-value-parser": "4.2.0",
+    "tsx": "4.21.0",
+    "acorn": "8.15.0",
+    "oxfmt": "0.61.0"
+  }
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "anc",
+    "title": "耳机如何让噪声安静下来",
+    "genre": "科学解释",
+    "description": "从实物剖面到声压叠加，把看不见的声学过程画出来。",
+    "color": "#176d78",
+    "preview": {
+      "slide": 2,
+      "step": 2
+    }
+  },
+  {
+    "id": "autofocus",
+    "title": "清晰，是怎样找回来的",
+    "genre": "技术机制",
+    "description": "镜头、光路、感光面与清晰度，组成一个连续过程。",
+    "color": "#b75431",
+    "preview": {
+      "slide": 1,
+      "step": 1
+    }
+  },
+  {
+    "id": "decision",
+    "title": "先减少等待，再增加人手",
+    "genre": "业务决策",
+    "description": "把队列、耗时与试点连接起来，让数字指向行动。",
+    "color": "#417e80",
+    "preview": {
+      "slide": 1,
+      "step": 1
+    }
+  },
+  {
+    "id": "teaching",
+    "title": "问对一个问题，就少一半可能",
+    "genre": "互动教学",
+    "description": "用候选卡片、区间和搜索路径，演示二分思想。",
+    "color": "#7650aa",
+    "preview": {
+      "slide": 1,
+      "step": 3
+    }
+  }
+]
